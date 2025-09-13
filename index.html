@@ -3,50 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Z Guy - Links</title>
+  <title>Z Guy - Official</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #ff7700;
       color: white;
+      margin: 0;
+      padding: 0;
       text-align: center;
-      padding: 50px;
     }
-    h1 {
+    header {
       background: #ff5500;
       padding: 20px;
-      border-radius: 12px;
+      font-size: 2em;
+      font-weight: bold;
     }
-    .links {
+    .content {
+      padding: 20px;
+    }
+    .posts {
       margin-top: 30px;
-    }
-    .link-btn {
-      display: block;
-      margin: 15px auto;
-      padding: 15px;
-      width: 250px;
       background: #ff9900;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .post {
+      background: #ffb733;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: left;
+    }
+    a {
       color: white;
       text-decoration: none;
-      border-radius: 8px;
-      font-size: 1.2em;
       font-weight: bold;
-      transition: 0.3s;
     }
-    .link-btn:hover {
-      background: #ffb733;
-      transform: scale(1.05);
+    .link-bar {
+      margin: 20px;
+      background: #ff5500;
+      padding: 15px;
+      border-radius: 8px;
     }
   </style>
+  <script>
+    async function fetchPosts() {
+      const container = document.getElementById("posts");
+      // Example placeholder posts (replace with actual backend or RSS later)
+      const posts = [
+        { title: "Welcome Post", content: "Welcome! I am Z Guy. This is the start of something great!" },
+        { title: "Big News Soon", content: "We will be soon posting more information. Stay tuned!" }
+      ];
+      container.innerHTML = "";
+      posts.forEach(post => {
+        const div = document.createElement("div");
+        div.className = "post";
+        div.innerHTML = `<h3>${post.title}</h3><p>${post.content}</p>`;
+        container.appendChild(div);
+      });
+    }
+
+    // Refresh posts every 60 seconds
+    setInterval(fetchPosts, 60000);
+    window.onload = fetchPosts;
+  </script>
 </head>
 <body>
-  <h1>🔥 Z Guy Official Links 🔥</h1>
-  <div class="links">
-    <a class="link-btn" href="https://www.youtube.com/" target="_blank">📺 YouTube</a>
-    <a class="link-btn" href="https://twitter.com/" target="_blank">🐦 Twitter</a>
-    <a class="link-btn" href="https://instagram.com/" target="_blank">📸 Instagram</a>
-    <a class="link-btn" href="https://discord.com/" target="_blank">💬 Discord</a>
+  <header>Welcome I am Z Guy</header>
+
+  <div class="link-bar">
+    <a href="https://ZGuy-official.github.io/Z-Links" target="_blank">🌐 Visit My Links Website</a>
+  </div>
+
+  <div class="content">
+    <h2>Latest Posts</h2>
+    <div id="posts" class="posts">
+      <!-- Posts will load here -->
+    </div>
   </div>
 </body>
 </html>
-
