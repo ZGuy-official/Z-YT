@@ -7,8 +7,8 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #ff7700;
-      color: white;
+      background-color: #1a1a1a;
+      color: #f0f0f0;
       margin: 0;
       padding: 0;
       text-align: center;
@@ -17,8 +17,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: #ff5500;
+      background: #262626;
       padding: 10px 20px;
+      border-bottom: 2px solid #ff7700;
     }
     .navbar img {
       height: 40px;
@@ -27,33 +28,47 @@
     .navbar h1 {
       margin: 0;
       font-size: 1.5em;
+      color: #ff7700;
     }
     .content {
       padding: 20px;
     }
     .posts {
       margin-top: 30px;
-      background: #ff9900;
+      background: #2a2a2a;
       padding: 20px;
       border-radius: 10px;
+      border: 1px solid #ff7700;
     }
     .post {
-      background: #ffb733;
+      background: #333;
       margin: 10px 0;
       padding: 15px;
       border-radius: 8px;
       text-align: left;
+      border-left: 4px solid #ff7700;
     }
     a {
-      color: white;
+      color: #ff7700;
       text-decoration: none;
       font-weight: bold;
     }
     .link-bar {
       margin: 20px;
-      background: #ff5500;
-      padding: 15px;
+    }
+    .link-btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      background: #ff7700;
+      color: white;
       border-radius: 8px;
+      font-size: 1em;
+      transition: 0.3s;
+    }
+    .link-btn:hover {
+      background: #ff9900;
+      transform: scale(1.05);
     }
   </style>
   <script>
@@ -61,13 +76,8 @@
       const container = document.getElementById("posts");
       // Example placeholder posts
       const posts = [
-        { title: "Welcome Post", content: "Welcome!
-I am Z Guy
-On The website there is going a lot of information about me and my team.
-We hope you’re ready for it. I am very ready.
-We will be soon posting more information.
-But make sure you check out the links.
-Z Team." },
+        { title: "Welcome Post", content: "Welcome! I am Z Guy. This is the start of something great!" },
+        { title: "Big News Soon", content: "We will be soon posting more information. Stay tuned!" }
       ];
       container.innerHTML = "";
       posts.forEach(post => {
@@ -85,10 +95,7 @@ Z Team." },
   <div class="navbar">
     <img src="ZGuy.png" alt="Z Guy Logo">
     <h1>Welcome I am Z Guy</h1>
-  </div>
-
-  <div class="link-bar">
-    <a href="https://ZGuy-official.github.io/Z-links/" target="_blank">🌐 Visit My Links Website</a>
+    <a class="link-btn" href="https://zguy-official.github.io/z-links/">➡ Links</a>
   </div>
 
   <div class="content">
