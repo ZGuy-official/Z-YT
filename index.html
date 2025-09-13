@@ -13,11 +13,20 @@
       padding: 0;
       text-align: center;
     }
-    header {
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       background: #ff5500;
-      padding: 20px;
-      font-size: 2em;
-      font-weight: bold;
+      padding: 10px 20px;
+    }
+    .navbar img {
+      height: 40px;
+      border-radius: 50%;
+    }
+    .navbar h1 {
+      margin: 0;
+      font-size: 1.5em;
     }
     .content {
       padding: 20px;
@@ -50,10 +59,15 @@
   <script>
     async function fetchPosts() {
       const container = document.getElementById("posts");
-      // Example placeholder posts (replace with actual backend or RSS later)
+      // Example placeholder posts
       const posts = [
-        { title: "Welcome Post", content: "Welcome! I am Z Guy. This is the start of something great!" },
-        { title: "Big News Soon", content: "We will be soon posting more information. Stay tuned!" }
+        { title: "Welcome Post", content: "Welcome!
+I am Z Guy
+On The website there is going a lot of information about me and my team.
+We hope you’re ready for it. I am very ready.
+We will be soon posting more information.
+But make sure you check out the links.
+Z Team." },
       ];
       container.innerHTML = "";
       posts.forEach(post => {
@@ -63,14 +77,15 @@
         container.appendChild(div);
       });
     }
-
-    // Refresh posts every 60 seconds
     setInterval(fetchPosts, 60000);
     window.onload = fetchPosts;
   </script>
 </head>
 <body>
-  <header>Welcome I am Z Guy</header>
+  <div class="navbar">
+    <img src="logo.png" alt="Z Guy Logo">
+    <h1>Welcome I am Z Guy</h1>
+  </div>
 
   <div class="link-bar">
     <a href="https://ZGuy-official.github.io/Z-links/" target="_blank">🌐 Visit My Links Website</a>
