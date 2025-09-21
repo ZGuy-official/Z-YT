@@ -6,96 +6,180 @@
   <title>Z Guy - Official</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #1a1a1a;
-      color: #f0f0f0;
       margin: 0;
-      padding: 0;
-      text-align: center;
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #eee;
     }
-    .navbar {
+
+    header {
+      background: #1e1e1e;
+      padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: #262626;
-      padding: 10px 20px;
-      border-bottom: 2px solid #ff7700;
+      border-bottom: 3px solid orange;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    .navbar img {
+
+    header img {
       height: 40px;
-      border-radius: 50%;
     }
-    .navbar h1 {
-      margin: 0;
-      font-size: 1.5em;
-      color: #ff7700;
-    }
-    .content {
-      padding: 20px;
-    }
-    .posts {
-      margin-top: 30px;
-      background: #2a2a2a;
-      padding: 20px;
-      border-radius: 10px;
-      border: 1px solid #ff7700;
-    }
-    .post {
-      background: #333;
-      margin: 10px 0;
-      padding: 15px;
-      border-radius: 8px;
-      text-align: left;
-      border-left: 4px solid #ff7700;
-    }
-    a {
-      color: #ff7700;
+
+    nav a {
+      margin-left: 15px;
       text-decoration: none;
+      color: orange;
       font-weight: bold;
+      transition: color 0.3s;
     }
-    .link-bar {
-      margin: 20px;
+
+    nav a:hover,
+    nav a:focus {
+      color: #fff;
+      text-decoration: underline;
     }
+
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .hero h1 {
+      color: orange;
+      font-size: 2.5em;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.2em;
+    }
+
+    .videos {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .videos h2 {
+      color: orange;
+      margin-bottom: 20px;
+    }
+
+    .video-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .video-grid iframe {
+      width: 100%;
+      max-width: 560px;
+      aspect-ratio: 16/9;
+      border-radius: 10px;
+    }
+
+    .links {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .links h2 {
+      color: orange;
+      margin-bottom: 20px;
+    }
+
     .link-btn {
       display: inline-block;
       margin: 10px;
-      padding: 12px 20px;
-      background: #ff7700;
-      color: white;
+      padding: 12px 18px;
+      background: #222;
+      color: #fff;
       border-radius: 8px;
-      font-size: 1em;
-      transition: 0.3s;
+      text-decoration: none;
+      transition: background 0.3s;
     }
+
     .link-btn:hover {
-      background: #ff9900;
-      transform: scale(1.05);
+      background: orange;
+      color: #000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1e1e1e;
+      border-top: 3px solid orange;
+      margin-top: 40px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      border-radius: 5px;
+      background: orange;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background: #ff9933;
     }
   </style>
-  <script>
-    async function fetchPosts() {
-      const container = document.getElementById("posts");
-      // Example placeholder posts
-      const posts = [
-        { title: "Welcome Post", content: "Welcome! I am Z Guy On The website there is going a lot of information about me and my team. We hope you’re ready for it. I am very ready. We will be soon posting more information. But make sure you check out the links. Z Team." },
-      ];
-      container.innerHTML = "";
-      posts.forEach(post => {
-        const div = document.createElement("div");
-        div.className = "post";
-        div.innerHTML = `<h3>${post.title}</h3><p>${post.content}</p>`;
-        container.appendChild(div);
-      });
-    }
-    setInterval(fetchPosts, 60000);
-    window.onload = fetchPosts;
-  </script>
 </head>
-<body>
-  <div class="navbar">
-    <img src="ZGuy.png" alt="Z Guy Logo">
-    <h1>Z Guy's Official Website!</h1>
-    <a class="link-btn" href="https://zguy-official.github.io/z-links/">➡ Links</a>
-  </div>
-  </div>
+<body id="top">
+  <header>
+    <img src="ZGuy.png" alt="Z Guy Official Logo">
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#videos">Videos</a>
+      <a href="#links">Links</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Welcome! I am Z Guy</h1>
+    <p>
+      On this website you’ll find information about me and my team.  
+      We hope you’re ready for it — we are very ready.  
+      We’ll soon be posting more, but for now make sure to check out the links below!  
+      <br><br>
+      – Z Team
+    </p>
+    <a class="back-btn" href="#top">Back to Top</a>
+  </section>
+
+  <section class="videos" id="videos">
+    <h2>Latest Videos</h2>
+    <div class="video-grid">
+      <!-- Replace UCUCNnUDZksscImqc8Xa1qg with your channel ID -->
+      <iframe 
+        src="https://www.youtube.com/embed?listType=user_uploads&list=UCUCNnUDZksscImqc8Xa1qg"
+        title="Z Guy Latest Videos"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <section class="links" id="links">
+    <h2>Check Out My Links</h2>
+    <a class="link-btn" href="https://youtube.com/@z_guy_official?si=wAxw-y_80t9PRbNf" target="_blank">YouTube</a>
+    <a class="link-btn" href="https://www.tiktok.com/@zkingdom_studios?_t=ZG-8zgxxO3u9om&_r=1" target="_blank">Tiktok</a>
+    <a class="link-btn" href="https://discord.gg/4c73V5fyKu" target="_blank">Discord</a>
+    <a class="link-btn" href="https://youtube.com/@mistytires_yt?si=20fHCKQa3Tb0qNgr" target="_blank">MistyTires's YouTube</a>
+    <br>
+    <a class="link-btn" href="https://zguy-official.github.io/z-links/" target="_blank">More Links</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Z Guy Official</p>
+  </footer>
 </body>
 </html>
